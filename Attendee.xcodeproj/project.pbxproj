@@ -13,6 +13,7 @@
 		1865522323E33CB80019C306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522123E33CB80019C306 /* Main.storyboard */; };
 		1865522523E33CBB0019C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1865522423E33CBB0019C306 /* Assets.xcassets */; };
 		1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522623E33CBB0019C306 /* LaunchScreen.storyboard */; };
+		1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865522F23E34EAE0019C306 /* EventCreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1865522423E33CBB0019C306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1865522723E33CBB0019C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1865522923E33CBB0019C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1865522F23E34EAE0019C306 /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1865522423E33CBB0019C306 /* Assets.xcassets */,
 				1865522623E33CBB0019C306 /* LaunchScreen.storyboard */,
 				1865522923E33CBB0019C306 /* Info.plist */,
+				1865522F23E34EAE0019C306 /* EventCreationViewController.swift */,
 			);
 			path = Attendee;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				1865522023E33CB80019C306 /* ViewController.swift in Sources */,
 				1865521C23E33CB80019C306 /* AppDelegate.swift in Sources */,
+				1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */,
 				1865521E23E33CB80019C306 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
