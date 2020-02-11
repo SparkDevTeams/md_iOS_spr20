@@ -13,6 +13,7 @@
 		1865522323E33CB80019C306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522123E33CB80019C306 /* Main.storyboard */; };
 		1865522523E33CBB0019C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1865522423E33CBB0019C306 /* Assets.xcassets */; };
 		1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522623E33CBB0019C306 /* LaunchScreen.storyboard */; };
+		BE0B4BEB23F3167000EDBA1A /* CameraScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */; };
 		BE9C07B723E34DE800E981CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9C07B623E34DE800E981CC /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1865522423E33CBB0019C306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1865522723E33CBB0019C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1865522923E33CBB0019C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScan.swift; sourceTree = "<group>"; };
 		BE9C07B623E34DE800E981CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 				1865521B23E33CB80019C306 /* AppDelegate.swift */,
 				1865521D23E33CB80019C306 /* SceneDelegate.swift */,
 				1865521F23E33CB80019C306 /* ViewController.swift */,
+				BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */,
 				1865522123E33CB80019C306 /* Main.storyboard */,
 				1865522423E33CBB0019C306 /* Assets.xcassets */,
 				1865522623E33CBB0019C306 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1865522023E33CB80019C306 /* ViewController.swift in Sources */,
+				BE0B4BEB23F3167000EDBA1A /* CameraScan.swift in Sources */,
 				1865521C23E33CB80019C306 /* AppDelegate.swift in Sources */,
 				1865521E23E33CB80019C306 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,12 +293,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DQ4F762AN;
 				INFOPLIST_FILE = Attendee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SparkDev.Attendee;
+				PRODUCT_BUNDLE_IDENTIFIER = SparkDev.Attendee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,12 +311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DQ4F762AN;
 				INFOPLIST_FILE = Attendee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SparkDev.Attendee;
+				PRODUCT_BUNDLE_IDENTIFIER = SparkDev.Attendee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
