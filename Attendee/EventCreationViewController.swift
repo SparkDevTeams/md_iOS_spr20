@@ -19,34 +19,32 @@ class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalen
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Set placeholder for textview
         editEventDescription.delegate = self
         editEventDescription.text = "Add an event description.."
         editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
         
+        // Style navigation bar
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x6AA6DE)
-       
 
     }
     
+    // Show action sheet when the image button is pressed
     @IBAction func showImagePickerController(_ sender: Any) {
         showImagePickerControllerActionSheet()
     }
     
-    @IBAction func choosePhotoPressed(_ sender: Any) {
-        print("Hello")
-    }
-    
+
+    // Settings for when the textview is selected
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5) {
             textView.text = nil
             textView.textColor = UIColor(rgb: 0x6AA6DE)
         }
     }
-    
+    // Settings for when the textview is done being selected
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Add an event description.."
@@ -75,6 +73,7 @@ extension UIColor {
    }
 }
 
+// Create the extension to present the action sheet for choosing/taking a picture. Can be used throughout the entire app
 extension EventCreationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {

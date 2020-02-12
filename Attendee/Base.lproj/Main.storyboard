@@ -201,7 +201,6 @@
                                                         <color key="tintColor" red="0.41568627450980389" green="0.65098039215686276" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" backgroundImage="camera.fill" catalog="system"/>
                                                         <connections>
-                                                            <action selector="choosePhotoPressed:" destination="ygu-zj-S9U" eventType="touchUpInside" id="ReM-M4-k78"/>
                                                             <action selector="showImagePickerController:" destination="ygu-zj-S9U" eventType="touchUpInside" id="9nf-TC-kZR"/>
                                                         </connections>
                                                     </button>
@@ -254,6 +253,7 @@
                     <navigationItem key="navigationItem" title="Create Event" id="Iz6-Lg-aUT"/>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
+                        <outlet property="calendar" destination="93Y-EW-AgV" id="yPV-6Y-K3g"/>
                         <outlet property="editEventDescription" destination="mXA-Ew-ODs" id="AVG-8z-vAZ"/>
                         <outlet property="editEventTitle" destination="qtd-J0-2p6" id="r6J-Ze-aXz"/>
                         <outlet property="eventImage" destination="evO-uV-Ice" id="m9F-8Q-AlZ"/>
