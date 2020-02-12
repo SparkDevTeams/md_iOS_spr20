@@ -1,0 +1,6 @@
+framework module Pods_Attendee {
+  umbrella header "Pods-Attendee-umbrella.h"
+
+  export *
+  module * { export * }
+}
