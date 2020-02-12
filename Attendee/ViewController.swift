@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var segue: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
 
 
+    @IBAction func segue(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToEventCreation", sender: sender)
+
+    }
 }
 

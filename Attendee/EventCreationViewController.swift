@@ -7,24 +7,105 @@
 //
 
 import UIKit
+import FSCalendar
 
-class EventCreationViewController: UIViewController {
+class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalendarDelegate, FSCalendarDataSource  {
 
+    @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var editEventDescription: UITextView!
+    @IBOutlet weak var editEventTitle: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        editEventDescription.delegate = self
+        editEventDescription.text = "Add an event description.."
+        editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
+        
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x6AA6DE)
+       
 
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func showImagePickerController(_ sender: Any) {
+        showImagePickerControllerActionSheet()
+    }
+    
+    @IBAction func choosePhotoPressed(_ sender: Any) {
+        print("Hello")
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5) {
+            textView.text = nil
+            textView.textColor = UIColor(rgb: 0x6AA6DE)
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Add an event description.."
+            textView.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
+}
+// Create the extension to use hexadecimal colors in UIColor()
+extension UIColor {
+   convenience init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+   }
+
+   convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
+}
+
+extension EventCreationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func showImagePickerControllerActionSheet() {
+        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
+            self.showImagePickerController(sourceType: .photoLibrary)
+        }
+        let cameraAction = UIAlertAction(title: "Take with camera", style: .default) { (action) in
+            self.showImagePickerController(sourceType: .camera)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        AlertService.showAlert(style: .actionSheet, title: "Choose image", message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
     }
-    */
-
+    
+    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            eventImage.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            eventImage.image = originalImage
+        }
+        dismiss(animated: true, completion: {
+            
+        })
+    }
+    
+    
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>598126071003-r2tnanb0pb2h7c5ulnhvv1bp9mun625b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.598126071003-r2tnanb0pb2h7c5ulnhvv1bp9mun625b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfBrxBFtnQ3cc_SbGC9QeBtfZ0MWCZ4L8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>598126071003</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.SparkDev.Tendee</string>
+	<key>PROJECT_ID</key>
+	<string>tendee-9f898</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tendee-9f898.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:598126071003:ios:a1b9031350915d16b610fe</string>
+	<key>DATABASE_URL</key>
+	<string>https://tendee-9f898.firebaseio.com</string>
+</dict>
+</plist>
