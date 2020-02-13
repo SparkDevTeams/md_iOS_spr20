@@ -15,6 +15,7 @@
 		1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522623E33CBB0019C306 /* LaunchScreen.storyboard */; };
 		BE0B4BEB23F3167000EDBA1A /* CameraScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */; };
 		BE9C07B723E34DE800E981CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9C07B623E34DE800E981CC /* Profile.storyboard */; };
+		BEE3646423F5B0FC0017CD35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1865522923E33CBB0019C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScan.swift; sourceTree = "<group>"; };
 		BE9C07B623E34DE800E981CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				1865521B23E33CB80019C306 /* AppDelegate.swift */,
 				1865521D23E33CB80019C306 /* SceneDelegate.swift */,
+				BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */,
 				1865521F23E33CB80019C306 /* ViewController.swift */,
 				BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */,
 				1865522123E33CB80019C306 /* Main.storyboard */,
@@ -133,6 +136,7 @@
 			files = (
 				1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */,
 				1865522523E33CBB0019C306 /* Assets.xcassets in Resources */,
+				BEE3646423F5B0FC0017CD35 /* GoogleService-Info.plist in Resources */,
 				BE9C07B723E34DE800E981CC /* Profile.storyboard in Resources */,
 				1865522323E33CB80019C306 /* Main.storyboard in Resources */,
 			);
@@ -299,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SparkDev.Attendee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SparkDev.Tendee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SparkDev.Attendee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SparkDev.Tendee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
