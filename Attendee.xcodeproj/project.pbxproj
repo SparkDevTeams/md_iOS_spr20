@@ -13,10 +13,10 @@
 		1865522323E33CB80019C306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522123E33CB80019C306 /* Main.storyboard */; };
 		1865522523E33CBB0019C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1865522423E33CBB0019C306 /* Assets.xcassets */; };
 		1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522623E33CBB0019C306 /* LaunchScreen.storyboard */; };
-		5A26A062FF9A7A8C36E2C4DC /* Pods_Attendee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85355EABBCC8004850A373E5 /* Pods_Attendee.framework */; };
 		BE0B4BEB23F3167000EDBA1A /* CameraScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */; };
 		BE9C07B723E34DE800E981CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9C07B623E34DE800E981CC /* Profile.storyboard */; };
 		BEE3646423F5B0FC0017CD35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */; };
+		D629975EBB53EEF1B70746DB /* libPods-Attendee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99253149FDE5C6DD73467A5E /* libPods-Attendee.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		1865522723E33CBB0019C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1865522923E33CBB0019C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837092C85D0817DE671342BC /* Pods-Attendee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendee.release.xcconfig"; path = "Target Support Files/Pods-Attendee/Pods-Attendee.release.xcconfig"; sourceTree = "<group>"; };
-		85355EABBCC8004850A373E5 /* Pods_Attendee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F401F5FA4F002B6F00693 /* Pods-Attendee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendee.debug.xcconfig"; path = "Target Support Files/Pods-Attendee/Pods-Attendee.debug.xcconfig"; sourceTree = "<group>"; };
+		99253149FDE5C6DD73467A5E /* libPods-Attendee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Attendee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0B4BEA23F3167000EDBA1A /* CameraScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScan.swift; sourceTree = "<group>"; };
 		BE9C07B623E34DE800E981CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A26A062FF9A7A8C36E2C4DC /* Pods_Attendee.framework in Frameworks */,
+				D629975EBB53EEF1B70746DB /* libPods-Attendee.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,14 +89,13 @@
 				983F401F5FA4F002B6F00693 /* Pods-Attendee.debug.xcconfig */,
 				837092C85D0817DE671342BC /* Pods-Attendee.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		D784E7EC9E61A6E9701FB48B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				85355EABBCC8004850A373E5 /* Pods_Attendee.framework */,
+				99253149FDE5C6DD73467A5E /* libPods-Attendee.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,7 +111,6 @@
 				1865521423E33CB80019C306 /* Sources */,
 				1865521523E33CB80019C306 /* Frameworks */,
 				1865521623E33CB80019C306 /* Resources */,
-				7F9AA824408F3B912CB41A5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,23 +170,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7F9AA824408F3B912CB41A5B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Attendee/Pods-Attendee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Attendee/Pods-Attendee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Attendee/Pods-Attendee-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDC3078A77AB881E8E02D37E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
