@@ -8,6 +8,7 @@
 
 import AVFoundation
 import UIKit
+import Firebase
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
@@ -89,8 +90,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     dismiss(animated: true)
                 }
 
-                func found(code: String) {
-                    print(code)}
+                func found(code: String) {//Do something after scan
+                    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
+                    present(controller, animated: true, completion: nil)
+                }
 
                         override var prefersStatusBarHidden: Bool {
                             return true
