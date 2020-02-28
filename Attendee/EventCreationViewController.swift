@@ -19,14 +19,20 @@ class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalen
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Set placeholder for textview
-        editEventDescription.delegate = self
-        editEventDescription.text = "Add an event description.."
-        editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
+//        editEventDescription.delegate = self
+//        editEventDescription.text = "Add an event description.."
+//        editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
         
         // Style navigation bar
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x6AA6DE)
 
     }
