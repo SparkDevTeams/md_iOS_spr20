@@ -17,6 +17,8 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var editEventDescription: UITextView!
     @IBOutlet weak var editEventTitle: UITextField!
     
+    var selectedDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.dataSource = self
@@ -46,8 +48,9 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
  
     // Actions to execute after pressing the save button
     @IBAction func saveButtonTapped(_ sender: Any) {
+        let newEvent = NewEvent(name: editEventTitle.text! , date: selectedDate!)
+        uploadEventToFirebase(event: newEvent)
     }
-    
     
     // Show action sheet when the image button is pressed
     @IBAction func showImagePickerController(_ sender: Any) {
@@ -70,8 +73,14 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    func uploadEventToFirebase(event: NewEvent) {
+        
+    }
+    
 
 }
+
+
 // Create the extension to use hexadecimal colors in UIColor()
 extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
@@ -129,6 +138,6 @@ extension EventCreationViewController: UIImagePickerControllerDelegate, UINaviga
 
 extension EventCreationViewController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        selectedDate = date
     }
 }
