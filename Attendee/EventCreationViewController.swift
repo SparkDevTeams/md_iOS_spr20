@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalendarDelegate, FSCalendarDataSource  {
+class EventCreationViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -19,7 +19,13 @@ class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalen
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendar.dataSource = self
+        calendar.delegate = self
+        calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
         
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+
         // Set placeholder for textview
 //        editEventDescription.delegate = self
 //        editEventDescription.text = "Add an event description.."
@@ -32,10 +38,16 @@ class EventCreationViewController: UIViewController, UITextViewDelegate, FSCalen
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x6AA6DE)
 
     }
+ 
+    // Actions to execute after pressing the save button
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
     
     // Show action sheet when the image button is pressed
     @IBAction func showImagePickerController(_ sender: Any) {
@@ -113,4 +125,10 @@ extension EventCreationViewController: UIImagePickerControllerDelegate, UINaviga
     }
     
     
+}
+
+extension EventCreationViewController: FSCalendarDataSource, FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print(date)
+    }
 }
