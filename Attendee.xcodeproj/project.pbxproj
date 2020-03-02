@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18042CA623EC6F9C009A0D59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18042CA523EC6F9C009A0D59 /* GoogleService-Info.plist */; };
-		180A20FE2409E61A006C39EF /* NewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A20FD2409E61A006C39EF /* NewEvent.swift */; };
+		180A20FE2409E61A006C39EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A20FD2409E61A006C39EF /* Event.swift */; };
 		180A21002409E629006C39EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A20FF2409E629006C39EF /* UserData.swift */; };
 		182698F223F2661E00221114 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182698F123F2661E00221114 /* AlertService.swift */; };
 		1865521C23E33CB80019C306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865521B23E33CB80019C306 /* AppDelegate.swift */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		18042CA523EC6F9C009A0D59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		180A20FD2409E61A006C39EF /* NewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEvent.swift; sourceTree = "<group>"; };
+		180A20FD2409E61A006C39EF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		180A20FF2409E629006C39EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		182698F123F2661E00221114 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		1865521823E33CB80019C306 /* Tendee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tendee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +55,7 @@
 		180A20FC2409E5EC006C39EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				180A20FD2409E61A006C39EF /* NewEvent.swift */,
+				180A20FD2409E61A006C39EF /* Event.swift */,
 				180A20FF2409E629006C39EF /* UserData.swift */,
 			);
 			path = Model;
@@ -234,7 +234,7 @@
 				1865521C23E33CB80019C306 /* AppDelegate.swift in Sources */,
 				180A21002409E629006C39EF /* UserData.swift in Sources */,
 				1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */,
-				180A20FE2409E61A006C39EF /* NewEvent.swift in Sources */,
+				180A20FE2409E61A006C39EF /* Event.swift in Sources */,
 				1865521E23E33CB80019C306 /* SceneDelegate.swift in Sources */,
 				182698F223F2661E00221114 /* AlertService.swift in Sources */,
 			);

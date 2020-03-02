@@ -21,17 +21,19 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the calendar's dataSource and delegate
         calendar.dataSource = self
         calendar.delegate = self
         calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
         
-        
+        // Set the status bar to be white
         UIApplication.shared.statusBarStyle = .lightContent
 
         // Set placeholder for textview
-//        editEventDescription.delegate = self
-//        editEventDescription.text = "Add an event description.."
-//        editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
+        editEventDescription.delegate = self
+        editEventDescription.text = "Add an event description.."
+        editEventDescription.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
         
         // Style navigation bar
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -48,7 +50,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
  
     // Actions to execute after pressing the save button
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let newEvent = NewEvent(name: editEventTitle.text! , date: selectedDate!)
+        let newEvent = Event()
         uploadEventToFirebase(event: newEvent)
     }
     
@@ -72,7 +74,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
             textView.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
         }
     }
-    
+    // Takes in the newly created NewEvent Struct and uploads it to Firebase
     func uploadEventToFirebase(event: NewEvent) {
         
     }
@@ -135,7 +137,7 @@ extension EventCreationViewController: UIImagePickerControllerDelegate, UINaviga
     
     
 }
-
+// Extension to manage the FSCalendar
 extension EventCreationViewController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date
