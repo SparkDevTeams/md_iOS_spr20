@@ -17,7 +17,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var editEventDescription: UITextView!
     @IBOutlet weak var editEventTitle: UITextField!
     
-    var selectedDate: Date?
+    private var selectedDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +50,10 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
  
     // Actions to execute after pressing the save button
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let newEvent = Event()
-        uploadEventToFirebase(event: newEvent)
+        if validEventForm() {
+            let newEvent = Event(eventName: editEventTitle.text, eventDate: selectedDate, eventDescription: editEventDescription.text, eventHost: nil, eventLocation: nil, hasAttendanceLimit: nil, eventAttendanceLimit: nil)
+            uploadEventToFirebase(event: newEvent)
+        }
     }
     
     // Show action sheet when the image button is pressed
@@ -75,8 +77,12 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
         }
     }
     // Takes in the newly created NewEvent Struct and uploads it to Firebase
-    func uploadEventToFirebase(event: NewEvent) {
+    func uploadEventToFirebase(event: Event) {
         
+    }
+    
+    func validEventForm() -> Bool {
+        return true
     }
     
 
