@@ -16,8 +16,8 @@
 		BD146F2D23FED5820028CC5E /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD146F2C23FED5820028CC5E /* Registration.swift */; };
 		BD146F2F23FED58E0028CC5E /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD146F2E23FED58E0028CC5E /* ForgotPassword.swift */; };
 		BD146F3123FED5990028CC5E /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD146F3023FED5990028CC5E /* MainMenu.swift */; };
-		BD146F3323FED5B30028CC5E /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD146F3223FED5B30028CC5E /* Authentication.storyboard */; };
 		BD146F3523FED5BD0028CC5E /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD146F3423FED5BD0028CC5E /* MainMenu.storyboard */; };
+		BD59AE31240EAEE600248DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD59AE33240EAEE600248DC8 /* Main.storyboard */; };
 		BEE3646423F5B0FC0017CD35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */; };
 		D629975EBB53EEF1B70746DB /* libPods-Attendee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99253149FDE5C6DD73467A5E /* libPods-Attendee.a */; };
 /* End PBXBuildFile section */
@@ -37,8 +37,8 @@
 		BD146F2C23FED5820028CC5E /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		BD146F2E23FED58E0028CC5E /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		BD146F3023FED5990028CC5E /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		BD146F3223FED5B30028CC5E /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		BD146F3423FED5BD0028CC5E /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
+		BD59AE32240EAEE600248DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEE3646323F5B0FC0017CD35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 		BD146F2923FED5650028CC5E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				BD146F3223FED5B30028CC5E /* Authentication.storyboard */,
+				BD59AE33240EAEE600248DC8 /* Main.storyboard */,
 				BD146F3423FED5BD0028CC5E /* MainMenu.storyboard */,
 			);
 			path = Storyboards;
@@ -184,7 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD146F3323FED5B30028CC5E /* Authentication.storyboard in Resources */,
+				BD59AE31240EAEE600248DC8 /* Main.storyboard in Resources */,
 				BD146F3523FED5BD0028CC5E /* MainMenu.storyboard in Resources */,
 				1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */,
 				1865522523E33CBB0019C306 /* Assets.xcassets in Resources */,
@@ -243,6 +243,14 @@
 				1865522723E33CBB0019C306 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BD59AE33240EAEE600248DC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD59AE32240EAEE600248DC8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
