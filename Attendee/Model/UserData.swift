@@ -8,7 +8,8 @@
 
 import Foundation
 
-class UserData {
+class UserData
+{
     private var userID: String!
     private var firstName: String!
     private var lastName: String!

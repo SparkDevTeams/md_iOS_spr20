@@ -9,6 +9,7 @@
 import Foundation
  
 class Event {
+    
     private var eventID: String!
     private var eventName: String!
     private var eventDate: Date!

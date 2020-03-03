@@ -18,6 +18,7 @@
 		1865522523E33CBB0019C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1865522423E33CBB0019C306 /* Assets.xcassets */; };
 		1865522823E33CBB0019C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865522623E33CBB0019C306 /* LaunchScreen.storyboard */; };
 		1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865522F23E34EAE0019C306 /* EventCreationViewController.swift */; };
+		18958E62240EB8AB00C9A535 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958E61240EB8AB00C9A535 /* CurrentUser.swift */; };
 		4FCA99B40C51E5AB6ED7FF4B /* Pods_Attendee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18259FEFB7EA7EFA9A5A08 /* Pods_Attendee.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		1865522723E33CBB0019C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1865522923E33CBB0019C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1865522F23E34EAE0019C306 /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationViewController.swift; sourceTree = "<group>"; };
+		18958E61240EB8AB00C9A535 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		6B18259FEFB7EA7EFA9A5A08 /* Pods_Attendee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A6FE7CD8EC56D464D77A67 /* Pods-Attendee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendee.release.xcconfig"; path = "Target Support Files/Pods-Attendee/Pods-Attendee.release.xcconfig"; sourceTree = "<group>"; };
 		CCA99511A307AC8C9D33F31F /* Pods-Attendee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendee.debug.xcconfig"; path = "Target Support Files/Pods-Attendee/Pods-Attendee.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				180A20FD2409E61A006C39EF /* Event.swift */,
 				180A20FF2409E629006C39EF /* UserData.swift */,
+				18958E61240EB8AB00C9A535 /* CurrentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */,
 				180A20FE2409E61A006C39EF /* Event.swift in Sources */,
 				1865521E23E33CB80019C306 /* SceneDelegate.swift in Sources */,
+				18958E62240EB8AB00C9A535 /* CurrentUser.swift in Sources */,
 				182698F223F2661E00221114 /* AlertService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,8 +386,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 357WQCGCRZ;
 				INFOPLIST_FILE = Attendee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,8 +407,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 357WQCGCRZ;
 				INFOPLIST_FILE = Attendee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

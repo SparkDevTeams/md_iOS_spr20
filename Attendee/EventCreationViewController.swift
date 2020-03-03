@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import Firebase
 
 class EventCreationViewController: UIViewController, UITextViewDelegate {
 
@@ -16,11 +17,17 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var editEventDescription: UITextView!
     @IBOutlet weak var editEventTitle: UITextField!
+    @IBOutlet weak var eventQRImage: UIImageView!
+    @IBOutlet weak var eventQRUniqueIdentifier: UITextField!
+    
     
     private var selectedDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Update the UI
+        updateUI()
         
         // Set the calendar's dataSource and delegate
         calendar.dataSource = self
@@ -50,10 +57,28 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
  
     // Actions to execute after pressing the save button
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         if validEventForm() {
             let newEvent = Event(eventName: editEventTitle.text, eventDate: selectedDate, eventDescription: editEventDescription.text, eventHost: nil, eventLocation: nil, hasAttendanceLimit: nil, eventAttendanceLimit: nil)
             uploadEventToFirebase(event: newEvent)
         }
+    }
+    @IBAction func generateQRButtonPressed(_ sender: Any) {
+        if (eventQRUniqueIdentifier.text! != "") {
+            if let myString = eventQRUniqueIdentifier.text
+            {
+                let data = myString.data(using: .ascii, allowLossyConversion: false)
+                let filter = CIFilter(name: "CIQRCodeGenerator")
+                filter?.setValue(data, forKey: "inputMessage")
+                
+                let img = UIImage(ciImage: (filter?.outputImage)!)
+                
+                eventQRImage.image = img
+            }
+        } else {
+            AlertService.showAlert(style: .alert, title: "Error", message: "You must provide a unique QR code string.")
+        }
+        
     }
     
     // Show action sheet when the image button is pressed
@@ -83,6 +108,10 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     
     func validEventForm() -> Bool {
         return true
+    }
+    
+    func updateUI() {
+       
     }
     
 
