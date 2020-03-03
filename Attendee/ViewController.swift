@@ -8,6 +8,7 @@
 import AVFoundation
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,20 @@ class ViewController: UIViewController {
         
         
     }
+    func showName(){
+        let userID : String = (FIRAuth.auth()?.currentUser?.uid)!
+         print("Current user ID is" + userID)
+
+        self.dbRef?.child("profile").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+             print(snapshot.value)
+
+             let userEmail = (snapshot.value as! NSDictionary)["addedByUser"] as! String
+             print(userEmail)
+
+
+         })
+    }
+    
 
 
 }
