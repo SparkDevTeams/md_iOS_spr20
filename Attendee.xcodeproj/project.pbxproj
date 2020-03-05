@@ -20,6 +20,7 @@
 		1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865522F23E34EAE0019C306 /* EventCreationViewController.swift */; };
 		18958E62240EB8AB00C9A535 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958E61240EB8AB00C9A535 /* CurrentUser.swift */; };
 		B23D12CF10F389CAE28BEB96 /* Pods_Attendee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220FAF8656DE1E9AB366A354 /* Pods_Attendee.framework */; };
+		BE1FB2B8241165DD004F0F9F /* CameraScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FB2B7241165DD004F0F9F /* CameraScan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		18958E61240EB8AB00C9A535 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		220FAF8656DE1E9AB366A354 /* Pods_Attendee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0FF3888E3F54B7E5EDAF8C /* Pods-Attendee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendee.release.xcconfig"; path = "Target Support Files/Pods-Attendee/Pods-Attendee.release.xcconfig"; sourceTree = "<group>"; };
+		BE1FB2B7241165DD004F0F9F /* CameraScan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				1865521D23E33CB80019C306 /* SceneDelegate.swift */,
 				1865521F23E33CB80019C306 /* ViewController.swift */,
 				182698F123F2661E00221114 /* AlertService.swift */,
+				BE1FB2B7241165DD004F0F9F /* CameraScan.swift */,
 				1865522123E33CB80019C306 /* Main.storyboard */,
 				1865522423E33CBB0019C306 /* Assets.xcassets */,
 				1865522623E33CBB0019C306 /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 				1865521C23E33CB80019C306 /* AppDelegate.swift in Sources */,
 				180A21002409E629006C39EF /* UserData.swift in Sources */,
 				1865523023E34EAE0019C306 /* EventCreationViewController.swift in Sources */,
+				BE1FB2B8241165DD004F0F9F /* CameraScan.swift in Sources */,
 				180A20FE2409E61A006C39EF /* Event.swift in Sources */,
 				1865521E23E33CB80019C306 /* SceneDelegate.swift in Sources */,
 				18958E62240EB8AB00C9A535 /* CurrentUser.swift in Sources */,
