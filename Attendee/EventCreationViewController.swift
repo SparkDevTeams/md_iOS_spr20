@@ -22,6 +22,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     
     
     private var selectedDate: Date?
+    private var QRImageUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
                 let img = UIImage(ciImage: (filter?.outputImage)!)
                 
                 eventQRImage.image = img
+                let url = img as! URL
             }
         } else {
             AlertService.showAlert(style: .alert, title: "Error", message: "You must provide a unique QR code string.")
