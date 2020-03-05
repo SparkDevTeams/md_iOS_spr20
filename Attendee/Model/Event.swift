@@ -16,16 +16,15 @@ class Event {
     private var eventDescription: String!
     private var eventHost: String!
     private var eventLocation: String!
+    private var eventQRCode: String!
     private var hasAttendanceLimit: Bool!
     private var organizationName: String?
     private var eventAttendanceLimit: Int?
     private var eventAttendees: [String]?
-    private var eventQRCode: String?
     
-    
-    init(eventName: String!, eventDate: Date!, eventDescription: String!,
-         eventHost: String!,
-         eventLocation: String!, hasAttendanceLimit: Bool!, eventAttendanceLimit: Int?) {
+    init(eventName: String, eventDate: Date, eventDescription: String,
+         eventHost: String,
+         eventLocation: String, eventQRCode: String) {
         
         self.eventID = UUID().uuidString
         self.eventName = eventName
@@ -33,10 +32,6 @@ class Event {
         self.eventDescription = eventDescription
         self.eventHost = eventHost
         self.eventLocation = eventLocation
-        self.hasAttendanceLimit = hasAttendanceLimit
-        
-        if hasAttendanceLimit {
-            self.eventAttendanceLimit = eventAttendanceLimit
-        }
+        self.eventQRCode = eventQRCode
     }
 }

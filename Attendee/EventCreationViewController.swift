@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import Firebase
+import FirebaseStorage
 
 class EventCreationViewController: UIViewController, UITextViewDelegate {
 
@@ -19,10 +20,13 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var editEventTitle: UITextField!
     @IBOutlet weak var eventQRImage: UIImageView!
     @IBOutlet weak var eventQRUniqueIdentifier: UITextField!
+    @IBOutlet weak var QRCodeCheckmark: UIImageView!
+    @IBOutlet weak var editEventHost: UITextField!
+    @IBOutlet weak var editEventLocation: UITextField!
     
     
     private var selectedDate: Date?
-    private var QRImageUrl: URL?
+    private var QRImageUrl: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +64,7 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         if validEventForm() {
-            let newEvent = Event(eventName: editEventTitle.text, eventDate: selectedDate, eventDescription: editEventDescription.text, eventHost: nil, eventLocation: nil, hasAttendanceLimit: nil, eventAttendanceLimit: nil)
+            let newEvent = Event(eventName: editEventTitle.text!, eventDate: selectedDate!, eventDescription: editEventDescription.text!, eventHost: editEventHost.text!, eventLocation: editEventLocation.text!, eventQRCode: QRImageUrl!)
             uploadEventToFirebase(event: newEvent)
         }
     }
@@ -71,11 +75,16 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
                 let data = myString.data(using: .ascii, allowLossyConversion: false)
                 let filter = CIFilter(name: "CIQRCodeGenerator")
                 filter?.setValue(data, forKey: "inputMessage")
-                
-                let img = UIImage(ciImage: (filter?.outputImage)!)
-                
+                let ciImage = filter?.outputImage
+                let transform = CGAffineTransform(scaleX: 10, y: 10)
+                let transformImage = ciImage?.transformed(by: transform)
+                           
+                let img = UIImage(ciImage: transformImage!)
                 eventQRImage.image = img
-                let url = img as! URL
+                
+                QRImageUrl = UUID().uuidString
+                QRCodeCheckmark.isHidden = false
+                
             }
         } else {
             AlertService.showAlert(style: .alert, title: "Error", message: "You must provide a unique QR code string.")
@@ -108,8 +117,64 @@ class EventCreationViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    func uploadPhoto() {
+        // Get the image, convert it into data, and compress it
+        guard let image = eventQRImage.image, let data = image.jpegData(compressionQuality: 1.0) else {
+            print("Something went wrong")
+            return
+        }
+        
+        //Generate the random UUID String for the image
+        let imageName = UUID().uuidString
+        // Reference the storage
+        let imageReference = Storage.storage().reference().child(imageName)
+        
+        // Upload the data to Firebase Storage
+        imageReference.putData(data, metadata: nil) { (metadata, err) in
+            if let err = err {
+                print(err)
+            }
+            
+            imageReference.downloadURL(completion: { (url, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                    return
+                }
+                
+                guard let url = url else {
+                    print("Something went wrong")
+                    return
+                }
+                
+                let dataReferenece = Firestore.firestore().collection("events").document(self.userID)
+                let documentUID = dataReferenece.documentID
+                let urlString = url.absoluteString
+                
+                let data = [
+                    "profilePhotoID" : documentUID,
+                    "profilePhotoURL" : urlString
+                ]
+                
+                dataReferenece.updateData(data) { (err) in
+                    if let err = err {
+                        print(err)
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    
+                    print("Success")
+                }
+            })
+        }
+    }
+    
     func validEventForm() -> Bool {
+        if (editEventTitle.text! == "" || editEventDescription.text! == "" || editEventHost.text! == "" || selectedDate == nil || editEventLocation.text! == "" || QRImageUrl == "")  {
+            AlertService.showAlert(style: .alert, title: "Error", message: "You must fill out all the forms!")
+            return false
+        }
         return true
+       
     }
     
     func updateUI() {

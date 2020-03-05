@@ -8,4 +8,5 @@ target 'Attendee' do
   # Pods for Attendee
 pod 'Firebase/Analytics'
 pod 'FSCalendar'
+pod 'Firebase/Storage'
 end
